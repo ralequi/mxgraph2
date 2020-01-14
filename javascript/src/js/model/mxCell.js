@@ -370,6 +370,18 @@ mxCell.prototype.isVisible = function()
 };
 
 /**
+ * Function: isLayoutIgnored
+ *
+ * Returns true if the cell is marked to be ignored by layout algorithmics.
+ */
+mxCell.prototype.isLayoutIgnored = function () {
+	if (this.value && this.value.hasAttribute('layoutIgnore')) {
+		return this.value.getAttribute('layoutIgnore') != 0;
+	}
+	return false;
+};
+
+/**
  * Function: setVisible
  *
  * Specifies if the cell is visible.

@@ -256,9 +256,9 @@ mxGraphLayout.prototype.isVertexIgnored = function(vertex)
 mxGraphLayout.prototype.isEdgeIgnored = function(edge)
 {
 	var model = this.graph.getModel();
-	
 	return !model.isEdge(edge) ||
 		!this.graph.isCellVisible(edge) ||
+		model.isLayoutIgnored(edge) ||
 		model.getTerminal(edge, true) == null ||
 		model.getTerminal(edge, false) == null;
 };

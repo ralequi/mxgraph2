@@ -1813,6 +1813,20 @@ mxGraphModel.prototype.isVisible = function(cell)
 };
 
 /**
+ * Function: isLayoutIgnored
+ * 
+ * Returns true if the given <mxCell> should be ignored by layout algorithmics.
+ * 
+ * Parameters:
+ * 
+ * cell - <mxCell> whose ignored state should be returned.
+ */
+mxGraphModel.prototype.isLayoutIgnored = function(cell)
+{
+	return (cell != null) ? cell.isLayoutIgnored() : false;
+};
+
+/**
  * Function: setVisible
  * 
  * Sets the visible state of the given <mxCell> using <mxVisibleChange> and
